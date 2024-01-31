@@ -51,9 +51,9 @@ Route::prefix('via_resource/')->name('via_resource.')->group(function() {
 
 
 // One way to work around it, but not preferred
-Route::middleware(['verified'])->prefix('via_url/')->name('via_url.')->group(function () {
-    Route::get('/organizations/{organization:slug}/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('organizations.registration_tokens.show');
-    Route::get('/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('registration_tokens.show');
-});
+// Route::middleware(['verified'])->prefix('via_url/')->name('via_url.')->group(function () {
+//     Route::get('/organizations/{organization:slug}/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('organizations.registration_tokens.show');
+//     Route::get('/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('registration_tokens.show');
+// });
 
 require __DIR__.'/auth.php';
