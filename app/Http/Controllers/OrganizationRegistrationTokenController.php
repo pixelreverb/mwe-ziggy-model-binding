@@ -6,7 +6,7 @@ use App\Models\RegistrationToken;
 use App\Models\Organization;
 use Illuminate\Http\Request;
 
-class RegistrationTokenController extends Controller
+class OrganizationRegistrationTokenController extends Controller
 {
     /**
      * Display a listing of the resource.

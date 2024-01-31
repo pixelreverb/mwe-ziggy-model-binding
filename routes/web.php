@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegistrationTokenController;
+use App\Http\Controllers\OrganizationRegistrationTokenController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
 // Routes for which ziggy does not generate the model binding
 Route::prefix('via_resource/')->name('via_resource.')->group(function() {
-    Route::resource('organizations.registrationTokens', RegistrationTokenController::class)
+    Route::resource('organizations.registrationTokens', OrganizationRegistrationTokenController::class)
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middleware(['verified']);
 
