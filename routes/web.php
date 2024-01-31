@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrganizationRegistrationTokenController;
+use App\Http\Controllers\RegistrationTokenController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -43,7 +44,7 @@ Route::prefix('via_resource/')->name('via_resource.')->group(function() {
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middleware(['verified']);
 
-    Route::resource('registration_tokens', RegistrationTokenController::class)
+    Route::resource('registrationTokens', RegistrationTokenController::class)
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middleware(['verified']);
 });
