@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrganizationRegistrationTokenController;
 use App\Http\Controllers\RegistrationTokenController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -39,20 +40,20 @@ Route::middleware('auth')->group(function () {
 
 // Routes for which ziggy does not generate the model binding
 Route::prefix('via_resource/')->name('via_resource.')->group(function() {
-    Route::resource('organizations.registration_tokens', RegistrationTokenController::class)
+    Route::resource('organizations.registrationTokens', OrganizationRegistrationTokenController::class)
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middleware(['verified']);
 
-    Route::resource('registration_tokens', RegistrationTokenController::class)
+    Route::resource('registrationTokens', RegistrationTokenController::class)
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middleware(['verified']);
 });
 
 
 // One way to work around it, but not preferred
-Route::middleware(['verified'])->prefix('via_url/')->name('via_url.')->group(function () {
-    Route::get('/organizations/{organization:slug}/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('organizations.registration_tokens.show');
-    Route::get('/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('registration_tokens.show');
-});
+// Route::middleware(['verified'])->prefix('via_url/')->name('via_url.')->group(function () {
+//     Route::get('/organizations/{organization:slug}/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('organizations.registration_tokens.show');
+//     Route::get('/registration_tokens/{registration_token:token}', [RegistrationTokenController::class, 'show'])->name('registration_tokens.show');
+// });
 
 require __DIR__.'/auth.php';

@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\RegistrationToken;
+use App\Models\Organization;
 use Illuminate\Http\Request;
 
-class RegistrationTokenController extends Controller
+class OrganizationRegistrationTokenController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Organization $organization)
     {
         //
     }
@@ -18,7 +19,7 @@ class RegistrationTokenController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Organization $organization)
     {
         //
     }
@@ -26,7 +27,7 @@ class RegistrationTokenController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Organization $organization)
     {
         //
     }
@@ -34,7 +35,7 @@ class RegistrationTokenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(RegistrationToken $registrationToken)
+    public function show(Organization $organization, RegistrationToken $registrationToken)
     {
         //
     }
@@ -42,7 +43,7 @@ class RegistrationTokenController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RegistrationToken $registrationToken)
+    public function edit(Organization $organization, RegistrationToken $registrationToken)
     {
         //
     }
@@ -50,7 +51,7 @@ class RegistrationTokenController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RegistrationToken $registrationToken)
+    public function update(Request $request, Organization $organization, RegistrationToken $registrationToken)
     {
         //
     }
@@ -58,7 +59,7 @@ class RegistrationTokenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RegistrationToken $registrationToken)
+    public function destroy(Organization $organization, RegistrationToken $registrationToken)
     {
         //
     }
