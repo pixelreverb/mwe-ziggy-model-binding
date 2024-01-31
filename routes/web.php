@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
 // Routes for which ziggy does not generate the model binding
 Route::prefix('via_resource/')->name('via_resource.')->group(function() {
-    Route::resource('organizations.registration_tokens', RegistrationTokenController::class)
+    Route::resource('organizations.registrationTokens', RegistrationTokenController::class)
         ->only(['index', 'create', 'store', 'show', 'destroy'])
         ->middleware(['verified']);
 
